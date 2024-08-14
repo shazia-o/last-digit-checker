@@ -1,0 +1,25 @@
+public class LastDigitChecker {
+//This program checks if at least two of the numbers have the same last digit
+
+//Validation check, given number must be between 10 and 1000 
+    public static boolean isValid (int numValid) {
+        return numValid >= 10 && numValid <= 1000;
+    }
+    
+    public static boolean hasSameLastDigit (int a, int b, int c) {
+
+//Validation check using the isValid method. If any of the numbers are invalid, "false" is returned
+        if (!isValid(a) || !isValid(b) || !isValid(c)) {
+            return false;
+        } 
+
+//Getting the last digit of the number using modulo operator %
+        int first = a % 10;
+        int second = b % 10;
+        int third = c % 10;
+//Comparing the last digits to see if any of them have the same digit
+        return (first == second) || (first == third) || (second == third);
+
+    }
+    
+}
